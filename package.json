@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/tobsirl/Emerald-Isle-Tours/issues"
   },
-  "homepage": "https://github.com/tobsirl/Emerald-Isle-Tours#readme"
+  "homepage": "https://github.com/tobsirl/Emerald-Isle-Tours#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
