@@ -1,0 +1,24 @@
+{
+  "name": "emerald-isle-tours",
+  "version": "1.0.0",
+  "description": "API for Irish Tours",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tobsirl/Emerald-Isle-Tours.git"
+  },
+  "keywords": [
+    "Backend",
+    "API",
+    "Testing"
+  ],
+  "author": "Paul Tobin <tobster111@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tobsirl/Emerald-Isle-Tours/issues"
+  },
+  "homepage": "https://github.com/tobsirl/Emerald-Isle-Tours#readme"
+}
