@@ -4,6 +4,12 @@ const app = express();
 
 app.use(express.json());
 
+// middleware function
+app.use((req, res, next) => {
+  console.log('Hello from the middleware');
+  next();
+});
+
 app.get('/api/v1/tours', (req, res) => {
   res.status(200).json({
     success: 'success',
