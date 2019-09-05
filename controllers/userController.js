@@ -1,34 +1,31 @@
-module.exports = getAllTours = (req, res) => {
+const getAllUsers = (req, res) => {
+  res.status(500).json({
+    status: 'error',
+    message: 'This route is not yet defined'
+  });
+};
+const createUser = (req, res) => {
   res.status(500).json({
     status: 'error',
     message: 'This route is not yet defined'
   });
 };
 
-module.exports = createTour = (req, res) => {
+const getUser = (req, res) => {
   res.status(500).json({
     status: 'error',
     message: 'This route is not yet defined'
   });
 };
 
-module.exports = getTour = (req, res) => {
+const updateUser = (req, res) => {
   res.status(500).json({
     status: 'error',
     message: 'This route is not yet defined'
   });
 };
 
-module.exports = updateTour = (req, res) => {
-  const id = req.params;
-  res.status(500).json({
-    status: 'error',
-    message: 'This route is not yet defined',
-    id: id
-  });
-};
-
-module.exports = deleteTour = (req, res) => {
+const deleteUser = (req, res) => {
   res.status(500).json({
     status: 'error',
     message: 'This route is not yet defined'
