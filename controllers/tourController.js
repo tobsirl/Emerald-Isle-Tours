@@ -1,25 +1,25 @@
-module.exports = getAllTours = (req, res) => {
+exports.getAllTours = (req, res) => {
   res.status(500).json({
     status: 'error',
     message: 'This route is not yet defined'
   });
 };
 
-module.exports = createTour = (req, res) => {
+exports.createTour = (req, res) => {
   res.status(500).json({
     status: 'error',
     message: 'This route is not yet defined'
   });
 };
 
-module.exports = getTour = (req, res) => {
+exports.getTour = (req, res) => {
   res.status(500).json({
     status: 'error',
     message: 'This route is not yet defined'
   });
 };
 
-module.exports = updateTour = (req, res) => {
+exports.updateTour = (req, res) => {
   const id = req.params;
   res.status(500).json({
     status: 'error',
@@ -28,7 +28,7 @@ module.exports = updateTour = (req, res) => {
   });
 };
 
-module.exports = deleteTour = (req, res) => {
+exports.deleteTour = (req, res) => {
   res.status(500).json({
     status: 'error',
     message: 'This route is not yet defined'
