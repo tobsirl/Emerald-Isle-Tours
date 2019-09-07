@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 
 const { MONGODB, MONGODB_PASSWORD } = process.env;
-console.log(process.env.MONGODB);
 
 const DB = MONGODB.replace('<password>', MONGODB_PASSWORD);
 
