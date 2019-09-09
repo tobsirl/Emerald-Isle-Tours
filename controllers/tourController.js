@@ -50,13 +50,24 @@ exports.getTour = async (req, res) => {
   }
 };
 
-exports.updateTour = (req, res) => {
-  const id = req.params;
-  res.status(500).json({
-    status: 'error',
-    message: 'This route is not yet defined',
-    id: id
-  });
+exports.updateTour = async (req, res) => {
+  try {
+    const tour = await Tour.findOneAndUpdate(req.params.id, req.body, {
+      new: true,
+      runValidators: true
+    });
+    res.status(400).json({
+      status: 'success',
+      data: {
+        tour
+      }
+    });
+  } catch (err) {
+    res.status(400).json({
+      status: 'fail',
+      message: err
+    });
+  }
 };
 
 exports.deleteTour = (req, res) => {
