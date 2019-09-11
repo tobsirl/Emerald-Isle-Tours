@@ -2,7 +2,9 @@ const Tour = require('../models/tourModel');
 
 exports.getAllTours = async (req, res) => {
   try {
-    const tours = await Tour.find();
+    const queryObj = { ...req.query };
+
+    const tours = await Tour.find(req.query);
 
     res.status(200).json({
       status: 'success',
@@ -36,7 +38,7 @@ exports.getTour = async (req, res) => {
   try {
     const tour = await Tour.findById(req.params.id);
 
-    res.status(500).json({
+    res.status(200).json({
       status: 'success',
       data: {
         tour
