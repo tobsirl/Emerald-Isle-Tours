@@ -1,5 +1,6 @@
 const Tour = require('../models/tourModel');
 const APIFeatures = require('../utils/apiFeatures');
+const catchAsync = require('../utils/catchAsync');
 
 exports.aliasTopTours = (req, res, next) => {
   req.query.limit = '5';
@@ -33,14 +34,9 @@ exports.getAllTours = async (req, res) => {
   }
 };
 
-const catchAsync = fn => {
-  return (req, res, next) => {
-    fn(req, res, next).catch(next);
-  };
-};
-
 exports.createTour = catchAsync(async (req, res, next) => {
   const newTour = await Tour.create(req.body);
+
   res.status(201).json({
     status: 'success',
     data: { tour: newTour }
