@@ -4,6 +4,7 @@ dotenv.config({ path: './config.env' });
 const app = require('./app');
 const connectDatabase = require('./database');
 
+console.log(process.env.NODE_ENV);
 // Make database connection
 connectDatabase();
 
