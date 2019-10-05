@@ -1,5 +1,6 @@
 const User = require('../models/userModel');
 const catchAsync = require('../utils/catchAsync');
+const jwt = require('jsonwebtoken')
 
 exports.signup = catchAsync(async (req, res, next) => {
   // Wrong way - Any user signing up for set there own role
