@@ -53,3 +53,16 @@ exports.login = catchAsync(async (req, res, next) => {
     token
   });
 });
+
+exports.protect = catchAsync(async (req, res, next) => {
+  // 1. Getting the token and check if it exists
+  
+
+  // 2. Validate the token(Verification)
+
+  // 3. Check if the user still exists
+
+  // 4. Check if the user changed password after the token was issued
+  console.log('Protected route');
+  next();
+});
