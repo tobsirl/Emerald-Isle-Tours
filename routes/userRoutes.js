@@ -13,6 +13,9 @@ const { signup, login } = require('../controllers/authController');
 router.post('/signup', signup);
 router.post('/login', login);
 
+router.post('/forgotPassword', login);
+router.post('/resetPassword', login);
+
 router
   .route('/')
   .get(getAllUsers)
