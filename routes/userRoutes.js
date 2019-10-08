@@ -14,7 +14,7 @@ router.post('/signup', signup);
 router.post('/login', login);
 
 router.post('/forgotPassword', login);
-router.post('/resetPassword', login);
+router.patch('/resetPassword/:token', login);
 
 router
   .route('/')
