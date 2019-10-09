@@ -24,6 +24,11 @@ exports.updateMe = async (req, res, next) => {
       )
     );
   }
+
+  // 2. Update the document
+  res.status(200).json({
+    status: 'success'
+  });
 };
 
 exports.createUser = (req, res) => {

@@ -25,6 +25,8 @@ router.patch('/resetPassword/:token', resetPassword);
 
 router.patch('/updateMyPassword', protect, updatePassword);
 
+router.patch('/updateMe', protect);
+
 router
   .route('/')
   .get(getAllUsers)
