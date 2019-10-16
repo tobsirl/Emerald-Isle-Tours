@@ -1,16 +1,21 @@
 const mongoose = require('mongoose');
 
-const reviewModel = new mongoose.Schema({
+const reviewSchema = new mongoose.Schema({
   review: {
     type: String,
     required: [true, 'Please provide a review']
   },
   rating: {
     type: Number,
-    required: []
+    min: 1,
+    max: 5
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now
   }
 });
 
-const review = mongoose.model('Review', reviewModel);
+const Review = mongoose.model('Review', reviewSchema);
 
-module.exports = review;
+module.exports = Review;
