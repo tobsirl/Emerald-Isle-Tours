@@ -6,11 +6,12 @@ const {
   getReview,
   createReview
 } = require('../controllers/reviewController');
+const { protect, restrictTo } = require('../controllers/authController');
 
 router
   .route('/')
   .get(getAllReviews)
-  .post(createReview);
+  .post(protect, restrictTo, createReview);
 
 router.route('/:id').get(getReview);
 
