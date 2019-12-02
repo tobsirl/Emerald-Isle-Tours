@@ -141,7 +141,7 @@
     "name": "Wild Atlantic Way Tour",
     "duration": 7,
     "maxGroupSize": 10,
-    "difficulty": "difficult",
+    "difficulty": "difficulty",
     "guides": [
       "5c8a21d02f8fb814b56fa189",
       "5c8a23412f8fb814b56fa18c",
