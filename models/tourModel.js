@@ -10,7 +10,7 @@ const tourSchema = new mongoose.Schema(
       required: [true, 'A tour must have a name'],
       unique: true,
       trim: true,
-      maxlength: [40, 'A tour name must have less or equal then 40 characters'],
+      maxlength: [80, 'A tour name must have less or equal then 80 characters'],
       minlength: [10, 'A tour name must have more or equal then 10 characters'],
       validate: {
         validator: function(val) {
@@ -32,8 +32,8 @@ const tourSchema = new mongoose.Schema(
       type: String,
       required: [true, 'A tour must have a difficulty'],
       enum: {
-        values: ['easy', 'moderate', 'hard'],
-        message: 'Difficulty is either: easy, moderate or hard'
+        values: ['easy', 'medium', 'difficulty'],
+        message: 'Difficulty is either: easy, medium or difficulty'
       }
     },
     ratingsAverage: {
@@ -118,6 +118,13 @@ const tourSchema = new mongoose.Schema(
 
 tourSchema.virtual('durationWeeks').get(function() {
   return this.duration / 7;
+});
+
+// Virtual Populate
+tourSchema.virtual('reviews', {
+  ref: 'Review',
+  foreignField: 'tour',
+  localField: '_id'
 });
 
 // DOCUMENT MIDDLEWARE: runs before .save() and .create()
