@@ -12,12 +12,14 @@ const {
 } = require('../controllers/userController');
 const {
   protect,
+  restrictTo,
   signup,
   login,
   forgotPassword,
   resetPassword,
   updatePassword
 } = require('../controllers/authController');
+const { createReview } = require('../controllers/reviewController');
 
 router.post('/signup', signup);
 router.post('/login', login);
@@ -40,5 +42,9 @@ router
   .get(getUser)
   .patch(updateUser)
   .delete(deleteUser);
+
+router
+  .route('/:tourId/reviews')
+  .post(protect, restrictTo('users'), createReview);
 
 module.exports = router;
