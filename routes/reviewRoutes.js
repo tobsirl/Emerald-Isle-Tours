@@ -12,7 +12,7 @@ const router = express.Router({ mergeParams: true });
 router
   .route('/')
   .get(getAllReviews)
-  .post(protect, restrictTo, createReview);
+  .post(protect, restrictTo('user'), createReview);
 
 router.route('/:id').get(getReview);
 
