@@ -13,6 +13,7 @@ const {
 } = require('../controllers/userController');
 const {
   protect,
+  restrictTo,
   signup,
   login,
   forgotPassword,
@@ -34,6 +35,8 @@ router.patch('/updateMyPassword', updatePassword);
 router.get('/me', getMe, getUser);
 router.patch('/updateMe', updateMe);
 router.delete('/deleteMe', deleteMe);
+
+router.use(restrictTo('admin'));
 
 router
   .route('/')
